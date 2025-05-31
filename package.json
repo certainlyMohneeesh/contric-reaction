@@ -17,7 +17,7 @@
     "circles",
     "mouse"
   ],
-  "author": "Mohneesh Naidu",
+  "author": "chemicalmyth",
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.0",
