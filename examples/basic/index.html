@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContricReaction Example</title>
+    <link rel="stylesheet" href="../../src/styles/animations.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const { useState } = React;
+        const ContricReaction = (await import('../../src/components/ContricReaction')).default;
+
+        const App = () => {
+            const [circleCount, setCircleCount] = useState(5);
+            const [maxSize, setMaxSize] = useState(100);
+            const [color, setColor] = useState('rgba(0, 0, 255, 0.3)');
+            const [rotationSpeed, setRotationSpeed] = useState(1);
+            const [followPointer, setFollowPointer] = useState(true);
+            const [followDelay, setFollowDelay] = useState(100);
+            const [enablePulse, setEnablePulse] = useState(true);
+
+            return (
+                <div>
+                    <ContricReaction
+                        circleCount={circleCount}
+                        maxSize={maxSize}
+                        color={color}
+                        rotationSpeed={rotationSpeed}
+                        followPointer={followPointer}
+                        followDelay={followDelay}
+                        enablePulse={enablePulse}
+                    />
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
